@@ -1,1 +1,1 @@
-# exJs
+# Exercícios de JavaScript
