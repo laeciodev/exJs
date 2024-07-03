@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Item à Lista</title>
+</head>
+<body>
+
+<h2>Lista de Tarefas</h2>
+<ul id="myList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<!-- Campo de entrada para o texto do item -->
+<input type="text" id="itemText" placeholder="Digite o texto do item">
+
+<!-- Botões de rádio para selecionar a cor -->
+<p>
+    <input type="radio" id="corVermelha" name="cores" value="red" checked>
+    <label for="corVermelha">Vermelho</label>
+    <input type="radio" id="corVerde" name="cores" value="green">
+    <label for="corVerde">Verde</label>
+    <input type="radio" id="corAzul" name="cores" value="blue">
+    <label for="corAzul">Azul</label>
+</p>
+
+<!-- Botão para adicionar item -->
+<button id="addButton">Adicionar Item</button>
+
+<script>
+document.getElementById("addButton").addEventListener("click", adicionarItem);
+
+function adicionarItem() {
+    // Obter o texto do item
+    var itemText = document.getElementById("itemText").value;
+
+    // Verificar se o texto do item não está vazio
+    if (itemText.trim() === "") {
+        alert("Por favor, insira um texto para o item.");
+        return;
+    }
+
+    // Criar um novo elemento li
+    var li = document.createElement("li");
+
+    // Definir o texto do novo item
+    li.textContent = itemText;
+
+    // Obter a cor selecionada
+    var cor = document.querySelector('input[name="cores"]:checked').value;
+
+    // Definir a cor do novo item
+    li.style.color = cor;
+
+    // Adicionar o novo item à lista
+    document.getElementById("myList").appendChild(li);
+
+    // Limpar o campo de entrada
+    document.getElementById("itemText").value = "";
+}
+</script>
+
+</body>
+</html>
