@@ -1,2 +1,2 @@
 # Exercícios de JavaScript
-Aluno: Laécio Jesus e Leonardo Gomes
+Atividade feita em dupla por Laécio Jesus e Leonardo Gomes
